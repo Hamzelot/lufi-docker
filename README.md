@@ -3,16 +3,11 @@
 Lufi means Let's Upload that FIle. It's a E2E encrypted file sharing software.
 
 ## Owner
-The writer of the lufi-software is [Luc Didry](https://github.com/ldidry/lufi) his project is licensed under the GNU Affero General Public License v3.0.
+The writer of the lufi-software is [Luc Didry](https://framagit.org/fiat-tux/hat-softwares/lufi/) his project is licensed under the GNU Affero General Public License v3.0.
 
 ## Installation
 
-Create the Docker Image
-
-```bash
-docker build -t lufi .
-```
-Now, start it!
+Adjust the environment variable and execute the run command
 
 ```bash
 docker run -itd \
@@ -24,7 +19,7 @@ docker run -itd \
 -e max_delay=180 \
 -v UPLOADED/FILES/LOCATION:/files \
 -p 8080:8081 \
- --name LUFI lufi
+ --name LUFI hamzelot/lufi
 ```
 
 ##### url_length
@@ -41,3 +36,4 @@ Access is now via http://SERVER_IP:8080.
 ## TLS Proxy
 
 How to use a Nginx proxy is described [here](https://framagit.org/fiat-tux/hat-softwares/lufi/-/wikis/installation#reverse-proxies).
+
