@@ -3,7 +3,7 @@
 Lufi means Let's Upload that FIle. It's a E2E encrypted file sharing software.
 
 ## Owner
-The writer of the lufi-software is [Luc Didry](https://framagit.org/fiat-tux/hat-softwares/lufi/) his project is licensed under the GNU Affero General Public License v3.0.
+The writer of the lufi-software is [Luc Didry](https://github.com/ldidry/lufi) his project is licensed under the GNU Affero General Public License v3.0.
 
 ## Installation
 
