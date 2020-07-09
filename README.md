@@ -14,12 +14,13 @@ docker run -itd \
 -e contact="<a href= 'your-website.eu'>here</a>" \
 -e report="name@email.eu" \
 -e site_name="SiteName" \
--e url_length=4 \
+-e url_length=8 \
 -e max_file_size=104857600 \
 -e max_delay=180 \
+-e use_proxy=0 \
 -v UPLOADED/FILES/LOCATION:/files \
 -p 8080:8081 \
- --name LUFI hamzelot/lufi
+ --name lufi hamzelot/lufi
 ```
 
 ##### url_length
@@ -37,3 +38,4 @@ Access is now via http://SERVER_IP:8080.
 
 How to use a Nginx proxy is described [here](https://framagit.org/fiat-tux/hat-softwares/lufi/-/wikis/installation#reverse-proxies).
 
+Important, set the environment variable "use_proxy" to 1
