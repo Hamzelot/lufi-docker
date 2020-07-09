@@ -38,4 +38,4 @@ Access is now via http://SERVER_IP:8080.
 
 How to use a Nginx proxy is described [here](https://framagit.org/fiat-tux/hat-softwares/lufi/-/wikis/installation#reverse-proxies).
 
-Important, set the environment variable "use_proxy" to 1
+!Important! Set the environment variable "use_proxy" to 1
