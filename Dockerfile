@@ -32,12 +32,13 @@ VOLUME ["/files"]
 
 CMD /bin/bash run.sh
 
-ENV contact "<a href= "example.com">here</a>"
+ENV contact "<a href= 'example.com'>here</a>"
 ENV report "abc@example.com"
 ENV site_name "lufi"
 ENV url_length 4
 ENV max_file_size 104857600
 ENV max_delay 0
 ENV use_proxy 0
+ENV allow_pwd 1
 
 HEALTHCHECK CMD curl --fail http://127.0.0.1:8081/ || exit 1

@@ -18,6 +18,7 @@ docker run -itd \
 -e max_file_size=104857600 \
 -e max_delay=180 \
 -e use_proxy=0 \
+-e allow_pwd=1 \
 -v UPLOADED/FILES/LOCATION:/files \
 -p 8080:8081 \
  --name lufi hamzelot/lufi
@@ -29,13 +30,15 @@ The length of the generated links
 The maximum upload size in bytes
 ##### max_delay
 The maximum duration until the uploaded files are deleted
-
+##### allow_pwd
+Allow to add a password on files, asked before allowing to download files
+ 
 ## Access
 
 Access is now via http://SERVER_IP:8080.
 
 ## TLS Proxy
 
-How to use a Nginx proxy is described [here](https://framagit.org/fiat-tux/hat-softwares/lufi/-/wikis/installation#reverse-proxies).
+How to use a Nginx or Apache proxy is described [here](https://framagit.org/fiat-tux/hat-softwares/lufi/-/wikis/installation#reverse-proxies).
 
 !Important! Set the environment variable "use_proxy" to 1
