@@ -11,8 +11,8 @@ Adjust the environment variable and execute the run command
 
 ```bash
 docker run -itd \
--e contact="<a href= 'your-website.eu'>here</a>" \
--e report="name@email.eu" \
+-e CONTACT_HTML="<a href= 'your-website.eu'>here</a>" \
+-e REPORT="name@email.eu" \
 -e site_name="SiteName" \
 -e url_length=8 \
 -e max_file_size=104857600 \
@@ -41,4 +41,4 @@ Access is now via http://SERVER_IP:8080.
 
 How to use a Nginx or Apache proxy is described [here](https://framagit.org/fiat-tux/hat-softwares/lufi/-/wikis/installation#reverse-proxies).
 
-!Important! Set the environment variable "use_proxy" to 1
+!Important! Set the environment variable "USE_PROXY" to 1
