@@ -5,6 +5,7 @@ services:
   lufi:
     container_name: lufi
     image: "hamzelot/lufi"
+    build: .
     ports:
       - 8080:8081
     volumes:
@@ -23,8 +24,6 @@ services:
       PROVIS_STEP: 5
       PROVISIONING: 100
       TOKEN_LENGTH: 32
-      PIWIK_IMAGE_TRACKER: ""
-      BROADCAST_MESSAGE: ""
       LIMIT_FILE_DESTROY_DAYS: 0
       URL_PREFIX: "/"
       FORCE_BURN_AFTER_READING: 0
