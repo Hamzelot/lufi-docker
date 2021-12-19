@@ -19,6 +19,18 @@ services:
       CONTACT_HTML: "<a href= 'your-website.eu'>here</a>" 
       REPORT_EMAIL: "name@email.eu"
       SITE_NAME: lufi
-
+      THEME: "default"
+      PROVIS_STEP: 5
+      PROVISIONING: 100
+      TOKEN_LENGTH: 32
+      PIWIK_IMAGE_TRACKER: ""
+      BROADCAST_MESSAGE: ""
+      LIMIT_FILE_DESTROY_DAYS: 0
+      URL_PREFIX: "/"
+      FORCE_BURN_AFTER_READING: 0
+      X_FRAME: "DENY"
+      X_CONTENT_TYPE: "nosniff"
+      X_XSS_PROTECTION: "1; mode=block"
+      KEEP_IP_DURING: 365
 volumes:
   data:
