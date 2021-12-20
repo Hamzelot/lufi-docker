@@ -9,7 +9,7 @@ services:
     ports:
       - 8080:8081
     volumes:
-      - "data:/files"
+      - "data:/usr/lufi/files"
     restart: "unless-stopped"
     environment:
       UID: 1000

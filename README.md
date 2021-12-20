@@ -30,7 +30,7 @@ docker run -itd \
 -e CONTACT_HTML="<a href= 'your-website.eu'>here</a>" \
 -e REPORT="name@email.eu" \
 -e SITE_NAME="SiteName" \
--v UPLOADED/FILES/LOCATION:/files \
+-v UPLOADED/FILES/LOCATION:/usr/lufi/files \
 -p 8080:8081 \
  --name lufi hamzelot/lufi
 ```
@@ -163,10 +163,10 @@ Valid values are 'sendmail' and 'smtp'
 
 ## Own Themes
 
-For a custom theme, you need to create a volume. This must point to the `/lufi/themes` folder. 
+For a custom theme, you need to create a volume. This must point to the `/usr/lufi/themes` folder. 
 
 After that you can copy your theme into the container with 
-`docker cp /PATH/TO/THEME lufi:/lufi/themes/`, after editing the variable with the name of the theme restart the container
+`docker cp /PATH/TO/THEME lufi:/usr/lufi/themes/`, after editing the variable with the name of the theme restart the container
 
 Alternatively, of course, the selected storage area may already contain the theme.
 
@@ -174,15 +174,15 @@ Alternatively, of course, the selected storage area may already contain the them
 
 ``` bash
     volumes:
-      - "data:/files"
-      - "themes:/lufi/themes"
+      - "data:/usr/lufi/files"
+      - "themes:/usr/lufi/themes"
     environment:
       THEME: "NAMEOFTHEME"
 ```
 
 ##### docker volume
 
-Add the `-v THEMES/FILES/LOCATION:/lufi/themes -e THEME="NAMEOFTHEME"` suffix to the command in the Docker header.
+Add the `-v THEMES/FILES/LOCATION:/usr/lufi/themes -e THEME="NAMEOFTHEME"` suffix to the command in the Docker header.
 
 
 ## Access

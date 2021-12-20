@@ -24,13 +24,11 @@ RUN apt-get update \
 
 RUN cpan Carton
 
-COPY --from=git /lufi /lufi
+COPY --from=git /lufi /usr/lufi
 
-WORKDIR /lufi
+WORKDIR /usr/lufi
 
 RUN carton install --deployment --without=test --without=postgresql --without=mysql --without=ldap --without=htpasswd --without=swift-storage
-
-RUN mkdir -p /files/database
 
 ENV CONTACT_HTML "<a href= 'example.com'>here</a>"
 ENV REPORT_EMAIL "abc@example.com"
@@ -57,13 +55,16 @@ ENV DISABLE_MAIL_SENDING 1
 ENV UID=1000
 ENV GID=1000
 
-COPY lufi.conf /lufi/
-COPY run.sh .
+COPY lufi.conf .
+COPY docker-entrypoint.sh .
 
-RUN chmod u+x run.sh
+RUN chmod u+x docker-entrypoint.sh
 
-VOLUME ["/files"]
+VOLUME ["/usr/lufi/files"]
 
-CMD ./run.sh
+CMD ["carton", "exec", "hypnotoad", "/usr/lufi/script/lufi"]
+
+ENTRYPOINT ["/usr/lufi/docker-entrypoint.sh"]
 
 HEALTHCHECK CMD curl --fail http://127.0.0.1:8081/ || exit 1
+EXPOSE 8081
