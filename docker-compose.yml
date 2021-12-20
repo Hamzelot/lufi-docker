@@ -12,6 +12,8 @@ services:
       - "data:/files"
     restart: "unless-stopped"
     environment:
+      UID: 1000
+      GID: 1000
       URL_LENGTH: 8
       MAX_FILE_SIZE: 104857600
       MAX_DELAY: 180
@@ -28,8 +30,11 @@ services:
       URL_PREFIX: "/"
       FORCE_BURN_AFTER_READING: 0
       X_FRAME: "DENY"
+      WORKER: 30
+      CLIENTS: 1
       X_CONTENT_TYPE: "nosniff"
       X_XSS_PROTECTION: "1; mode=block"
       KEEP_IP_DURING: 365
+      DISABLE_MAIL_SENDING: 1
 volumes:
   data:
