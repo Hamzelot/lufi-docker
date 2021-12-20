@@ -107,13 +107,13 @@ _Default: 365_
 Files which are not viewed since delete_no_longer_viewed_files days will be deleted by the cron cleanfiles task  
 _Default: (no default, optional)_
 ##### WORKER [NUMBER]
-Number of worker processes
+Number of worker processes  
 _Default: 30_
 ##### CLIENTS [NUMBER]
-Maximum number of accepted connections each worker process
+Maximum number of accepted connections each worker process  
 _Default: 1_
 ##### DELAY_FOR_SIZE [HASHTABLE]
-Size thresholds: if you want to define max delays for different sizes of file
+Size thresholds: if you want to define max delays for different sizes of file  
 _Default (no default, optional)_
 ``` yaml
     environment:
@@ -122,13 +122,13 @@ _Default (no default, optional)_
         50000000 => 60, 
         1000000000 => 2
 ``` 
-between 10MB and 50MB => max is 90 days, less than 10MB => max is max_delay (see above)
-between 50MB ans 1GB  => max is 60 days
+between 10MB and 50MB => max is 90 days, less than 10MB => max is max_delay (see above)  
+between 50MB ans 1GB  => max is 60 days  
 more than 1GB         => max is 2 days
 ##### ABUSE [HASHTABLE]
-Abuse reasons
-Set an integer in the abuse field of a file in the database and it will not be downloadable anymore
-The reason will be displayed to the downloader, according to the reasons you will configure here.
+Abuse reasons  
+Set an integer in the abuse field of a file in the database and it will not be downloadable anymore  
+The reason will be displayed to the downloader, according to the reasons you will configure here.  
 _Default (no default, optional)_
 ``` yaml
     environment:
@@ -137,21 +137,20 @@ _Default (no default, optional)_
         1 => 'Illegal content',
 ```
 ##### ALLOWED_DOMAINS [ARRAY]
-Array of authorized domains for API calls.
+Array of authorized domains for API calls.  
 _Default (no default, optional)_
 ##### FIXED_DOMAIN [STRING]
-If set, the files' URLs will always use this domain
+If set, the files' URLs will always use this domain  
 _Default (no default, optional)_
 ##### DISABLE_MAIL_SENDING [NUMBER]
-Disable sending mail through the server
+Disable sending mail through the server  
 _Default 1_
 ##### MAIL_SENDER [STRING]
-Email sender address
-_Default (no default, optional)_
-##### MAIL
- [HASHTABLE]
-Mail configuration
-See https://metacpan.org/pod/Mojolicious::Plugin::Mail#EXAMPLES
+Email sender address  
+_Default (no default, optional)_  
+##### MAIL [HASHTABLE]
+Mail configuration  
+See https://metacpan.org/pod/Mojolicious::Plugin::Mail#EXAMPLES  
 _Default (no default, optional)_
 ``` yaml
     environment:
