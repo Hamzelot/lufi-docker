@@ -7,20 +7,26 @@ The writer of the lufi-software is [Luc Didry](https://framagit.org/fiat-tux/hat
 
 ## Installation
 
+
 ### Docker Compose
 
 Please adjust the environment variables in the .docker-compose file then start
 
 ```bash
+docker-compose build
 docker-compose up
 
 ```
+
+The build command is optionally
 
 ### Docker
 
 Adjust the environment variable and execute the run command
 
 ```bash
+docker build -t hamzelot/lufi .
+
 docker run -itd \
 -e CONTACT_HTML="<a href= 'your-website.eu'>here</a>" \
 -e REPORT="name@email.eu" \
@@ -29,6 +35,8 @@ docker run -itd \
 -p 8080:8081 \
  --name lufi hamzelot/lufi
 ```
+
+The build command is optionally
 
 ### Variables
 
