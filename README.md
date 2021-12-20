@@ -34,7 +34,7 @@ docker run -itd \
 
 ##### CONTACT_HTML 
 Put a way to contact you here  
-_Default: "<a href= 'example.com'>here</a>"_
+_Default: "\<a href= 'example.com'>here</a>"_
 ##### REPORT_EMAIL
 Put an URL or an email address to receive file reports  
 _Default: "abc@example.com"_
@@ -58,6 +58,7 @@ Allow to add a password on files, asked before allowing to download files
 _Default: 1_
 ##### THEME 
 Choose a theme. See the available themes in `themes` directory  
+Explanation of use below  
 _Default: "default"_
 ##### PROVIS_STEP 
 How many URLs will be provisioned in a batch ?  
@@ -98,6 +99,30 @@ _Default: 365_
 ##### DELETE_NO_LONGER_VIEWED_FILES_DAYS 
 Files which are not viewed since delete_no_longer_viewed_files days will be deleted by the cron cleanfiles task  
 _Default: (no default, optional)_
+
+## Own Themes
+
+For a custom theme, you need to create a volume. This must point to the `/lufi/themes` folder. 
+
+After that you can copy your theme into the container with 
+`docker cp /PATH/TO/THEME lufi:/lufi/themes/`, after editing the variable with the name of the theme restart the container
+
+Alternatively, of course, the selected storage area may already contain the theme.
+
+##### docker-compose volume
+
+``` bash
+    volumes:
+      - "data:/files"
+      - "themes:/lufi/themes"
+    environment:
+      THEME: "NAMEOFTHEME"
+```
+
+##### docker volume
+
+Add the `-v THEMES/FILES/LOCATION:/lufi/themes -e THEME="NAMEOFTHEME"` suffix to the command in the Docker header.
+
 
 ## Access
 
